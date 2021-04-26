@@ -1,21 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>GET</name>
+   <name>UpdateUser</name>
    <tag></tag>
-   <elementGuidId>8155d934-1138-452e-af54-3298251e6d03</elementGuidId>
+   <elementGuidId>3201154d-6637-4f7e-8bff-0018639ed52e</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <connectionTimeout>0</connectionTimeout>
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
-   <httpBodyContent></httpBodyContent>
-   <httpBodyType></httpBodyType>
+   <httpBodyContent>{
+  &quot;text&quot;: &quot;{\n  \&quot;first_name\&quot;:\&quot;${firstName}\&quot;,\n  \&quot;last_name\&quot;:\&quot;M\&quot;\n}&quot;,
+  &quot;contentType&quot;: &quot;application/json&quot;,
+  &quot;charset&quot;: &quot;UTF-8&quot;
+}</httpBodyContent>
+   <httpBodyType>text</httpBodyType>
+   <httpHeaderProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>Content-Type</name>
+      <type>Main</type>
+      <value>application/json</value>
+   </httpHeaderProperties>
    <katalonVersion>7.9.1</katalonVersion>
    <maxResponseSize>0</maxResponseSize>
    <migratedVersion>5.4.1</migratedVersion>
-   <restRequestMethod>GET</restRequestMethod>
-   <restUrl>https://reqres.in/api/users?page=${page}</restUrl>
+   <restRequestMethod>PUT</restRequestMethod>
+   <restUrl>https://reqres.in/api/users/2</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -25,18 +36,11 @@
    <socketTimeout>0</socketTimeout>
    <useServiceInfoFromWsdl>true</useServiceInfoFromWsdl>
    <variables>
-      <defaultValue>'2'</defaultValue>
+      <defaultValue>GlobalVariable.firstName</defaultValue>
       <description></description>
-      <id>4bebad39-3bdf-40f9-8eeb-a140e925cc35</id>
+      <id>e1b629c4-0371-4d0f-af07-a42aaeb2b3f6</id>
       <masked>false</masked>
-      <name>page</name>
-   </variables>
-   <variables>
-      <defaultValue>'Michael'</defaultValue>
-      <description></description>
-      <id>1a493445-05ce-411d-8117-58397041e26d</id>
-      <masked>false</masked>
-      <name>name</name>
+      <name>firstName</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
@@ -52,9 +56,11 @@ RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
-//WS.verifyElementPropertyValue(response, 'issues[0].fields.project.key', 'KTP')
-WS.verifyElementPropertyValue(response, 'data[0].first_name', 'Michael')
+WS.verifyResponseStatusCode(response, 200)
 
-</verificationScript>
+assertThat(response.getStatusCode()).isEqualTo(200)
+//WS.verifyElementPropertyValue(response, 'data.first_name', &quot;Janet&quot;)
+
+WS.verifyElementPropertyValue(response, 'first_name', &quot;Janet&quot;)</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

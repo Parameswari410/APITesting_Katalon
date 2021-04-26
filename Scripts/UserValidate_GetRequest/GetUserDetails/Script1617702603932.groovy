@@ -21,5 +21,5 @@ response = WS.sendRequest(findTestObject('GETRequest/GetUser'))
 
 WS.verifyResponseStatusCode(response, 200)
 
-WS.verifyElementPropertyValue(response, 'data.id', 4)
+WS.verifyElementPropertyValue(response, 'data.id', 2)
 

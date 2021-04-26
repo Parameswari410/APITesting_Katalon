@@ -6,6 +6,7 @@
    <UUID>497cc725-91ce-4fe2-8a48-65f7137bede1</UUID>
    <migratedVersion>5.9.0</migratedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
+   <projectFileLocation>/home/parameswari/Katalon Studio/API Testing/API Testing.prj</projectFileLocation>
    <sourceContent>
       <sourceFolderList>
          <sourceFolderConfiguration>

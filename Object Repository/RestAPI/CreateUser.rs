@@ -1,21 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>GET</name>
+   <name>CreateUser</name>
    <tag></tag>
-   <elementGuidId>8155d934-1138-452e-af54-3298251e6d03</elementGuidId>
+   <elementGuidId>14af001b-7ac4-422b-9e36-a0ac96b070c7</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <connectionTimeout>0</connectionTimeout>
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
-   <httpBodyContent></httpBodyContent>
-   <httpBodyType></httpBodyType>
+   <httpBodyContent>{
+  &quot;contentType&quot;: &quot;application/x-www-form-urlencoded&quot;,
+  &quot;charset&quot;: &quot;UTF-8&quot;,
+  &quot;parameters&quot;: [
+    {
+      &quot;name&quot;: &quot;name&quot;,
+      &quot;value&quot;: &quot;Liya&quot;
+    },
+    {
+      &quot;name&quot;: &quot;job&quot;,
+      &quot;value&quot;: &quot;Software  Engineer&quot;
+    }
+  ]
+}</httpBodyContent>
+   <httpBodyType>x-www-form-urlencoded</httpBodyType>
+   <httpHeaderProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>Content-Type</name>
+      <type>Main</type>
+      <value>application/x-www-form-urlencoded</value>
+   </httpHeaderProperties>
    <katalonVersion>7.9.1</katalonVersion>
    <maxResponseSize>0</maxResponseSize>
    <migratedVersion>5.4.1</migratedVersion>
-   <restRequestMethod>GET</restRequestMethod>
-   <restUrl>https://reqres.in/api/users?page=${page}</restUrl>
+   <restRequestMethod>POST</restRequestMethod>
+   <restUrl>https://reqres.in/api/users</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -24,20 +44,6 @@
    <soapServiceFunction></soapServiceFunction>
    <socketTimeout>0</socketTimeout>
    <useServiceInfoFromWsdl>true</useServiceInfoFromWsdl>
-   <variables>
-      <defaultValue>'2'</defaultValue>
-      <description></description>
-      <id>4bebad39-3bdf-40f9-8eeb-a140e925cc35</id>
-      <masked>false</masked>
-      <name>page</name>
-   </variables>
-   <variables>
-      <defaultValue>'Michael'</defaultValue>
-      <description></description>
-      <id>1a493445-05ce-411d-8117-58397041e26d</id>
-      <masked>false</masked>
-      <name>name</name>
-   </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
 import com.kms.katalon.core.testobject.RequestObject
@@ -52,9 +58,12 @@ RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
-//WS.verifyElementPropertyValue(response, 'issues[0].fields.project.key', 'KTP')
-WS.verifyElementPropertyValue(response, 'data[0].first_name', 'Michael')
 
-</verificationScript>
+WS.verifyResponseStatusCode(response, 201)
+
+assertThat(response.getStatusCode()).isEqualTo(201)
+
+
+WS.verifyElementPropertyValue(response, 'name', &quot;Liya&quot;)</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>
