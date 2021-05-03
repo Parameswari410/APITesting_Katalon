@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>CreateUsers_DataDriven</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>4e0e7bc2-473f-4bc0-beb5-4e5405ed8f89</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>eaca9980-ec46-45d5-a4e1-0ad8bee69945</id>
+      <masked>false</masked>
+      <name>username</name>
+   </variable>
+</TestCaseEntity>

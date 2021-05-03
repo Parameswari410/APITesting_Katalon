@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>08_ValidateDeleteUser</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>262f6cc6-4d81-4ab8-b5bc-667c8ac282e6</testCaseGuid>
+   <variable>
+      <defaultValue>204</defaultValue>
+      <description></description>
+      <id>35af7ae8-5cca-4f43-a8be-76178a43fd4e</id>
+      <masked>false</masked>
+      <name>responseCode</name>
+   </variable>
+</TestCaseEntity>

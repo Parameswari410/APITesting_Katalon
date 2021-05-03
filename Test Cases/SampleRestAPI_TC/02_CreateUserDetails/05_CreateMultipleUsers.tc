@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>05_CreateMultipleUsers</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c9cf4937-9141-4877-80db-1b92923e5937</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>ba4c6643-e04b-4116-84d6-e9f4a67996af</id>
+      <masked>false</masked>
+      <name>name</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>c4ddc303-4e46-4231-bffc-5cbe87bff534</id>
+      <masked>false</masked>
+      <name>job</name>
+   </variable>
+   <variable>
+      <defaultValue>201</defaultValue>
+      <description></description>
+      <id>f0f05b8f-f481-43a9-9108-b81ff87e9ceb</id>
+      <masked>false</masked>
+      <name>responseCode</name>
+   </variable>
+</TestCaseEntity>

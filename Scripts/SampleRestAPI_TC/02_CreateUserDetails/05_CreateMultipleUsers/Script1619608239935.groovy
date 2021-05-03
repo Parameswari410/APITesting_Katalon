@@ -17,7 +17,16 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-response = WS.sendRequest(findTestObject('DeleteRequest'))
+response = WS.sendRequest(findTestObject('SampleRestAPI/CreateUser/CreateMultipleUsers', [('url') : GlobalVariable.url, ('name') : name
+            , ('job') : job]))
 
-WS.verifyResponseStatusCode(response, 204)
+WS.verifyResponseStatusCode(response, responseCode)
+
+println("...Name Created as : "+name)
+
+WS.verifyElementPropertyValue(response, 'name', name)
+
+println("...Job set as : "+job)
+
+WS.verifyElementPropertyValue(response, 'job', job)
 

@@ -9,4 +9,9 @@
       <initValue>''</initValue>
       <name>firstName</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'reqres.in'</initValue>
+      <name>url</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

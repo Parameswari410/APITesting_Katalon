@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>UpdateUser</name>
+   <name>CreateRegister</name>
    <tag></tag>
-   <elementGuidId>3201154d-6637-4f7e-8bff-0018639ed52e</elementGuidId>
+   <elementGuidId>6c10bb95-dd1f-46d0-a2e0-a049abf24959</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <connectionTimeout>0</connectionTimeout>
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n  \&quot;first_name\&quot;:\&quot;${firstName}\&quot;,\n  \&quot;last_name\&quot;:\&quot;M\&quot;\n}&quot;,
+  &quot;text&quot;: &quot;{\n    \&quot;email\&quot;: \&quot;${email}\&quot;,\n    \&quot;password\&quot;: \&quot;${password}\&quot;\n}&quot;,
   &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -25,8 +25,8 @@
    <katalonVersion>7.9.1</katalonVersion>
    <maxResponseSize>0</maxResponseSize>
    <migratedVersion>5.4.1</migratedVersion>
-   <restRequestMethod>PUT</restRequestMethod>
-   <restUrl>${GlobalVariable.url}/api/users/${userID}</restUrl>
+   <restRequestMethod>POST</restRequestMethod>
+   <restUrl>${baseUrl}/${endPoint}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -36,18 +36,32 @@
    <socketTimeout>0</socketTimeout>
    <useServiceInfoFromWsdl>true</useServiceInfoFromWsdl>
    <variables>
-      <defaultValue>GlobalVariable.firstName</defaultValue>
+      <defaultValue>GlobalVariable.url</defaultValue>
       <description></description>
-      <id>e1b629c4-0371-4d0f-af07-a42aaeb2b3f6</id>
+      <id>91d51bfa-ab3f-402d-b26d-8765fd877bf2</id>
       <masked>false</masked>
-      <name>firstName</name>
+      <name>baseUrl</name>
    </variables>
    <variables>
-      <defaultValue>'2'</defaultValue>
+      <defaultValue>'eve.holt@reqres.in'</defaultValue>
       <description></description>
-      <id>24265ccb-132f-4174-a396-6dc18f01018a</id>
+      <id>c93079c5-8c5c-4058-bd83-ce44ebbcc180</id>
       <masked>false</masked>
-      <name>userID</name>
+      <name>email</name>
+   </variables>
+   <variables>
+      <defaultValue>'pistol'</defaultValue>
+      <description></description>
+      <id>7e62b8b5-6f48-4ce8-b95c-7d90ff7c8b8f</id>
+      <masked>false</masked>
+      <name>password</name>
+   </variables>
+   <variables>
+      <defaultValue>'/api/register'</defaultValue>
+      <description></description>
+      <id>b47dfdd9-8796-4510-a7e9-cbb379533a92</id>
+      <masked>false</masked>
+      <name>endPoint</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
@@ -63,11 +77,11 @@ RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
+
 WS.verifyResponseStatusCode(response, 200)
 
 assertThat(response.getStatusCode()).isEqualTo(200)
-//WS.verifyElementPropertyValue(response, 'data.first_name', &quot;Janet&quot;)
 
-WS.verifyElementPropertyValue(response, 'first_name', &quot;Janet&quot;)</verificationScript>
+assertThat(response.getResponseText()).contains('token')</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

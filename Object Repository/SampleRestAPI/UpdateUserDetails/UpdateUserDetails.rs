@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>UpdateUser</name>
+   <name>UpdateUserDetails</name>
    <tag></tag>
-   <elementGuidId>3201154d-6637-4f7e-8bff-0018639ed52e</elementGuidId>
+   <elementGuidId>38187635-125d-46b5-9c54-61a80287a164</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <connectionTimeout>0</connectionTimeout>
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n  \&quot;first_name\&quot;:\&quot;${firstName}\&quot;,\n  \&quot;last_name\&quot;:\&quot;M\&quot;\n}&quot;,
+  &quot;text&quot;: &quot;{\n    \&quot;name\&quot;: \&quot;${name}\&quot;,\n    \&quot;job\&quot;: \&quot;${job}\&quot;\n}&quot;,
   &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -26,7 +26,7 @@
    <maxResponseSize>0</maxResponseSize>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>PUT</restRequestMethod>
-   <restUrl>${GlobalVariable.url}/api/users/${userID}</restUrl>
+   <restUrl>${baseUrl}/${endPoint}/${id}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -36,18 +36,39 @@
    <socketTimeout>0</socketTimeout>
    <useServiceInfoFromWsdl>true</useServiceInfoFromWsdl>
    <variables>
-      <defaultValue>GlobalVariable.firstName</defaultValue>
+      <defaultValue>2</defaultValue>
       <description></description>
-      <id>e1b629c4-0371-4d0f-af07-a42aaeb2b3f6</id>
+      <id>6a0d22b3-e4d5-4a79-9c0f-d893909605d8</id>
       <masked>false</masked>
-      <name>firstName</name>
+      <name>id</name>
    </variables>
    <variables>
-      <defaultValue>'2'</defaultValue>
+      <defaultValue>GlobalVariable.url</defaultValue>
       <description></description>
-      <id>24265ccb-132f-4174-a396-6dc18f01018a</id>
+      <id>2c89ec3e-9a2f-4550-8089-03ab89cd6535</id>
       <masked>false</masked>
-      <name>userID</name>
+      <name>baseUrl</name>
+   </variables>
+   <variables>
+      <defaultValue>'morpheus'</defaultValue>
+      <description></description>
+      <id>69d67a7a-3a0b-4f9a-88b6-deb2e0f8e0ba</id>
+      <masked>false</masked>
+      <name>name</name>
+   </variables>
+   <variables>
+      <defaultValue>'zion resident'</defaultValue>
+      <description></description>
+      <id>00ff0822-8ee9-47cf-98a7-d381f6d7135f</id>
+      <masked>false</masked>
+      <name>job</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.endPoint</defaultValue>
+      <description></description>
+      <id>9d775e1b-8457-4bec-afb4-f0c16757c9d8</id>
+      <masked>false</masked>
+      <name>endPoint</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
@@ -63,11 +84,11 @@ RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
+
 WS.verifyResponseStatusCode(response, 200)
 
 assertThat(response.getStatusCode()).isEqualTo(200)
-//WS.verifyElementPropertyValue(response, 'data.first_name', &quot;Janet&quot;)
-
-WS.verifyElementPropertyValue(response, 'first_name', &quot;Janet&quot;)</verificationScript>
+WS.verifyElementPropertyValue(response, 'name', &quot;morpheus&quot;)
+WS.verifyElementPropertyValue(response, 'job', &quot;zion resident&quot;)</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

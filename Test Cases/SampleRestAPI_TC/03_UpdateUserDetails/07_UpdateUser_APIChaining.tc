@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>07_UpdateUser_APIChaining</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>dc750bb4-295e-42ef-be10-2ecc222c6753</testCaseGuid>
+   <variable>
+      <defaultValue>200</defaultValue>
+      <description></description>
+      <id>27ad6b66-dbe2-4584-a899-40aad03ae8af</id>
+      <masked>false</masked>
+      <name>sourceCode</name>
+   </variable>
+   <variable>
+      <defaultValue>'Software Engineer'</defaultValue>
+      <description></description>
+      <id>c8b2228c-eb40-4176-8c47-6d691bec494d</id>
+      <masked>false</masked>
+      <name>job</name>
+   </variable>
+</TestCaseEntity>

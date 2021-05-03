@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>03_CreateUser</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>96e5f131-da06-42a6-9a1a-2709428a41e0</testCaseGuid>
+   <variable>
+      <defaultValue>201</defaultValue>
+      <description></description>
+      <id>246a59a4-48f2-49cf-ba76-2e10767ec58e</id>
+      <masked>false</masked>
+      <name>responseCode</name>
+   </variable>
+   <variable>
+      <defaultValue>'Liya'</defaultValue>
+      <description></description>
+      <id>9f0279a1-8df7-41ac-84de-e136a9d658ff</id>
+      <masked>false</masked>
+      <name>name</name>
+   </variable>
+   <variable>
+      <defaultValue>'Software Engineer'</defaultValue>
+      <description></description>
+      <id>968ab496-d1a8-42a7-a818-f1f920c961a2</id>
+      <masked>false</masked>
+      <name>job</name>
+   </variable>
+</TestCaseEntity>

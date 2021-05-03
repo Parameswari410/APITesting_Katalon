@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>04_CreateRegister</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>42fe9a9f-d50a-47ec-92d7-8a35ecfc5a70</testCaseGuid>
+   <variable>
+      <defaultValue>'token'</defaultValue>
+      <description></description>
+      <id>567cb5a8-ef7c-4666-80e6-fd31f1c71b35</id>
+      <masked>false</masked>
+      <name>token</name>
+   </variable>
+</TestCaseEntity>

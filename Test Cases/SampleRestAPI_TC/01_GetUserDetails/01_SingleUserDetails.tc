@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>01_SingleUserDetails</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>42b8f757-cf2e-4373-938a-33185abb9b6e</testCaseGuid>
+   <variable>
+      <defaultValue>2</defaultValue>
+      <description></description>
+      <id>a142eae4-1477-412d-8d61-37afa1ef9be6</id>
+      <masked>false</masked>
+      <name>idNumber</name>
+   </variable>
+   <variable>
+      <defaultValue>'Janet'</defaultValue>
+      <description></description>
+      <id>ce7e6b58-8415-4a6b-856f-40f0dadcc9f5</id>
+      <masked>false</masked>
+      <name>firstName</name>
+   </variable>
+   <variable>
+      <defaultValue>200</defaultValue>
+      <description></description>
+      <id>cf9dbef9-9f14-444d-96d8-88456127b4f6</id>
+      <masked>false</masked>
+      <name>responseCode</name>
+   </variable>
+</TestCaseEntity>

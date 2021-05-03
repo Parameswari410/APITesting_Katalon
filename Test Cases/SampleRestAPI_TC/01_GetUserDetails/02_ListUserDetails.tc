@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>02_ListUserDetails</name>
+   <tag>ListUsers</tag>
+   <comment></comment>
+   <testCaseGuid>a46bbba5-70a0-470a-9b19-c5219200a2a8</testCaseGuid>
+   <variable>
+      <defaultValue>200</defaultValue>
+      <description></description>
+      <id>46ecb953-02a1-49d1-931e-cdeb68da7cbf</id>
+      <masked>false</masked>
+      <name>responseCode</name>
+   </variable>
+   <variable>
+      <defaultValue>2</defaultValue>
+      <description></description>
+      <id>e0678ab8-2dd7-43ad-8608-e35db465e415</id>
+      <masked>false</masked>
+      <name>pageNumber</name>
+   </variable>
+   <variable>
+      <defaultValue>6</defaultValue>
+      <description></description>
+      <id>95b0e3b8-3196-408c-ab12-6459833c4c84</id>
+      <masked>false</masked>
+      <name>count</name>
+   </variable>
+</TestCaseEntity>

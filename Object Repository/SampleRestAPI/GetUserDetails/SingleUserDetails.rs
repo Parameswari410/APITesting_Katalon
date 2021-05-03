@@ -1,32 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>UpdateUser</name>
+   <name>SingleUserDetails</name>
    <tag></tag>
-   <elementGuidId>3201154d-6637-4f7e-8bff-0018639ed52e</elementGuidId>
+   <elementGuidId>41145622-3e6c-4fae-a46e-435d7079564f</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <connectionTimeout>0</connectionTimeout>
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
-   <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n  \&quot;first_name\&quot;:\&quot;${firstName}\&quot;,\n  \&quot;last_name\&quot;:\&quot;M\&quot;\n}&quot;,
-  &quot;contentType&quot;: &quot;application/json&quot;,
-  &quot;charset&quot;: &quot;UTF-8&quot;
-}</httpBodyContent>
-   <httpBodyType>text</httpBodyType>
-   <httpHeaderProperties>
-      <isSelected>true</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>Content-Type</name>
-      <type>Main</type>
-      <value>application/json</value>
-   </httpHeaderProperties>
+   <httpBodyContent></httpBodyContent>
+   <httpBodyType></httpBodyType>
    <katalonVersion>7.9.1</katalonVersion>
    <maxResponseSize>0</maxResponseSize>
    <migratedVersion>5.4.1</migratedVersion>
-   <restRequestMethod>PUT</restRequestMethod>
-   <restUrl>${GlobalVariable.url}/api/users/${userID}</restUrl>
+   <restRequestMethod>GET</restRequestMethod>
+   <restUrl>${baseUrl}/${endPoint}/${id}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -36,18 +25,25 @@
    <socketTimeout>0</socketTimeout>
    <useServiceInfoFromWsdl>true</useServiceInfoFromWsdl>
    <variables>
-      <defaultValue>GlobalVariable.firstName</defaultValue>
+      <defaultValue>GlobalVariable.url</defaultValue>
       <description></description>
-      <id>e1b629c4-0371-4d0f-af07-a42aaeb2b3f6</id>
+      <id>df1916bc-00a0-472a-958b-799b7a328b87</id>
       <masked>false</masked>
-      <name>firstName</name>
+      <name>baseUrl</name>
    </variables>
    <variables>
       <defaultValue>'2'</defaultValue>
       <description></description>
-      <id>24265ccb-132f-4174-a396-6dc18f01018a</id>
+      <id>77f6a8d1-a264-414a-b4f3-3edfb87a934b</id>
       <masked>false</masked>
-      <name>userID</name>
+      <name>id</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.endPoint</defaultValue>
+      <description></description>
+      <id>e31feadb-a2b1-4605-b3a9-7bc4d5e02982</id>
+      <masked>false</masked>
+      <name>endPoint</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
@@ -63,11 +59,11 @@ RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
+
 WS.verifyResponseStatusCode(response, 200)
 
 assertThat(response.getStatusCode()).isEqualTo(200)
-//WS.verifyElementPropertyValue(response, 'data.first_name', &quot;Janet&quot;)
-
-WS.verifyElementPropertyValue(response, 'first_name', &quot;Janet&quot;)</verificationScript>
+WS.verifyElementPropertyValue(response, 'data.id', 2)
+WS.verifyElementPropertyValue(response, 'data.first_name', &quot;Janet&quot;)</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

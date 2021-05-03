@@ -21,7 +21,7 @@
       <guid>0d841ca0-e9d0-483a-b471-081321351af8</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/DeleteRequest</testCaseId>
+      <testCaseId>Test Cases/New Folder/DeleteRequest</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>5d9b5c14-17eb-4293-9711-1eb47a4a03d7</guid>
